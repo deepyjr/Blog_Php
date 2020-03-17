@@ -13,12 +13,11 @@
 
         if (count($results->fetch()) == 1){
             echo 'cas 1 ';
-            $User->create();
-            echo 'Instance réussie';
+            $User->createFormLogin();
+            header("Location: http://projetphp/index.php?page=login");
         }
         else{
             header("Location: http://projetphp/index.php?page=formError");
-            };
         }
         
        }   

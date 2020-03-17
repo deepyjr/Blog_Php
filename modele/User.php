@@ -35,28 +35,51 @@ class User {
         
         global $Db;
         $sql = "DELETE FROM user WHERE userID = $id";
-        echo $sql;
         $result  = $Db->query($sql);
            
     }
     
     public function create(){
-       
-            $nom = $_POST["nom"];
-            $prenom = $_POST["prenom"];
-            $userPseudo = $_POST["userPseudo"];
-            $email = $_POST["email"];
-            $role = $_POST["role"];
-            $password = $_POST["password"];
-            $photo = $_POST["photo"];
-            
-            
-            global $Db;
-        
-           $Db->query("INSERT INTO user(userPseudo, email , password, nom, prenom , role ,photo )
-                    VALUES('$userPseudo','$email','$password','$nom', '$prenom', '$role', '$photo')");
-    }
     
+        $nom = $_POST["nom"];
+        $prenom = $_POST["prenom"];
+        $userPseudo = $_POST["userPseudo"];
+        $email = $_POST["email"];
+        $role = $_POST["role"];
+        $password = $_POST["password"];
+        $photo = $_POST["photo"];
+        
+        
+
+        global $Db;
+    
+        $Db->query("INSERT INTO user(userPseudo, email , password, nom, prenom , role ,photo )
+                VALUES('$userPseudo','$email','$password','$nom', '$prenom', '$role', '$photo')");
+    }
+
+    public function createFormLogin(){
+    
+        $nom = $_POST["nom"];
+        $prenom = $_POST["prenom"];
+        $userPseudo = $_POST["userPseudo"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $photo = $_POST["photo"];
+        
+        
+
+        global $Db;
+    
+        $Db->query("INSERT INTO user(userPseudo, email , password, nom, prenom , role ,photo )
+                VALUES('$userPseudo','$email','$password','$nom', '$prenom', 2, '$photo')");
+    }
+
+    public function listUserById($id) {
+        global $Db;
+        $resultUser  = $Db->query("SELECT * FROM user WHERE userPseudo = '$id' ");
+        return $resultUser;
+    }
+
     public function update() {
         
     } 

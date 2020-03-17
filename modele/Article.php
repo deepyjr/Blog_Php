@@ -26,12 +26,20 @@ class Article {
         
     }
     
-    public function destroy(){
-        
+    public function deleteAdmin($id){
+        global $Db;
+        $sql = "DELETE FROM article WHERE articleID = $id";
+        $result  = $Db->query($sql);
     }
-    
-    public function createByPost(){
-        $this->userID  = $_POST["userID"];
+
+    public function delete($articleID){
+        global $Db;
+        $sql = "DELETE FROM article WHERE articleID = $articleID ";
+        $result  = $Db->query($sql);
+    }
+
+    public function createByPost($userID){
+        $this->userID  = $userID ;
         $this->articleCatégorie = $_POST["articleCatégorie"];
         $this->articleTitre  = $_POST["articleTitre"];
         $this->articleTexte  = $_POST["articleTexte"];
@@ -48,14 +56,21 @@ class Article {
                 VALUES('$this->userID', '$this->articleCatégorie', '$this->articleTitre', '$this->articleTexte', '$this->articlePhoto')");
     }
     
-    public function listArticle() {
-
+    public function listArticleAdmin() {
         global $Db;
-
         $resultArticle  = $Db->query("SELECT * FROM `article` ORDER BY `article`.`articleDate` DESC ");
-
         return $resultArticle;
-        
+    }
 
+    public function listArticleById($id) {
+        global $Db;
+        $resultArticle  = $Db->query("SELECT * FROM `article`WHERE userID = '$id' ORDER BY `article`.`articleDate` DESC ");
+        return $resultArticle;
+    }
+    
+    public function ModifierArticleById($id) {
+        global $Db;
+        $resultArticle  = $Db->query("SELECT * FROM `article`WHERE userID = '$id' ORDER BY `article`.`articleDate` DESC ");
+        return $resultArticle;
     }
 }

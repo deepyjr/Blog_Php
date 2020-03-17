@@ -1,3 +1,3 @@
 <?php
 
-include('./vues/createArticle.php');
+include('./layout/layout.php');

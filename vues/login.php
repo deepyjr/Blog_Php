@@ -32,7 +32,7 @@ include('modele/Login.php');
   <input type="password"  class="form-control" placeholder="Password" required="" name="loginPassword">
 
 
-  <a href="./forms.php" >S'inscrire</a>
+  <a href="index.php?page=formLogin" >S'inscrire</a>
   
   
   <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Se connecter</button>

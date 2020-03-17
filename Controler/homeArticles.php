@@ -1,9 +1,7 @@
 <?php
 
-
-
 $Article = new Article();
-$resultsArticle = $Article->listArticle();
+$resultsArticle = $Article->listArticleAdmin();
 
 
 include('./layout/layout.php');

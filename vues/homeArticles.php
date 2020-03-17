@@ -19,5 +19,5 @@ foreach($resultsArticle as $resultArticle){
 }
 
 
-    ?>
+?>
 

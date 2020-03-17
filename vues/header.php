@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Gestion de mes articles</a>
+                  <a class="nav-link" href="index.php?page=gestionArticle">Gestion de mes articles</a>
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="index.php?page=createArticle">Ecrire un article</a>
