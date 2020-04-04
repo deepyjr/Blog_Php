@@ -20,6 +20,9 @@
                  <li class="nav-item">
                     <a class="nav-link" href="index.php?page=createArticle">Ecrire un article</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=schearch">Rechercher un article</a>
+                </li>
               </ul>
               <form class="form-inline my-2 my-lg-0" action="?page=disconnect" method="post" >
                 <button class="btn btn-danger my-2 my-sm-0" type="submit">Se deconnecter</button>

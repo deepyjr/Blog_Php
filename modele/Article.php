@@ -73,4 +73,10 @@ class Article {
         $resultArticle  = $Db->query("SELECT * FROM `article`WHERE userID = '$id' ORDER BY `article`.`articleDate` DESC ");
         return $resultArticle;
     }
+
+    public static function chercher($motclef) {
+        global $Db;
+        $resultArticle  = $Db->query("SELECT * FROM `article` WHERE articleTitre like '$motclef' or texte like '$motclef' ");
+        return $resultArticle;
+    }
 }
